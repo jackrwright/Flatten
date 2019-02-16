@@ -13,6 +13,8 @@
 		21BCCB5A2218625700C319E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BCCB592218625700C319E9 /* Assets.xcassets */; };
 		21BCCB5D2218625700C319E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BCCB5B2218625700C319E9 /* LaunchScreen.storyboard */; };
 		21BCCB682218625700C319E9 /* FlattenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCCB672218625700C319E9 /* FlattenTests.swift */; };
+		21BCCB7322186F3700C319E9 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCCB7222186F3700C319E9 /* Array+Extensions.swift */; };
+		21BCCB7422186F4000C319E9 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCCB7222186F3700C319E9 /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 		21BCCB632218625700C319E9 /* FlattenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlattenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BCCB672218625700C319E9 /* FlattenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlattenTests.swift; sourceTree = "<group>"; };
 		21BCCB692218625700C319E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21BCCB7222186F3700C319E9 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			children = (
 				21BCCB522218625500C319E9 /* AppDelegate.swift */,
 				21BCCB542218625500C319E9 /* ViewController.swift */,
+				21BCCB7222186F3700C319E9 /* Array+Extensions.swift */,
 				21BCCB562218625500C319E9 /* Main.storyboard */,
 				21BCCB592218625700C319E9 /* Assets.xcassets */,
 				21BCCB5B2218625700C319E9 /* LaunchScreen.storyboard */,
@@ -198,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21BCCB552218625500C319E9 /* ViewController.swift in Sources */,
+				21BCCB7322186F3700C319E9 /* Array+Extensions.swift in Sources */,
 				21BCCB532218625500C319E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21BCCB682218625700C319E9 /* FlattenTests.swift in Sources */,
+				21BCCB7422186F4000C319E9 /* Array+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
