@@ -23,7 +23,16 @@ class FlattenTests: XCTestCase {
 		
 		let array = ["one", "two", "three", "four"]
 		
-		XCTAssert(array.elementsEqual(array.flatten()))
+		do {
+			
+			let result = try array.flatten()
+		
+			XCTAssert(array.elementsEqual(result))
+			
+		} catch {
+			
+			XCTFail("\(error.localizedDescription)")
+		}
 	}
 	
 	func testExampleArray() {
@@ -32,6 +41,85 @@ class FlattenTests: XCTestCase {
 		
 		let expectedArray = ["one", "two", "three", "four"]
 		
-		XCTAssert(expectedArray.elementsEqual(input.flatten()))
+		do {
+			
+			let result = try input.flatten()
+			
+			XCTAssert(result.elementsEqual(expectedArray))
+			
+		} catch {
+			
+			XCTFail("\(error.localizedDescription)")
+		}
+	}
+	
+	func testEmptyArrayElement() {
+		
+		let input: [Any] = [["one","two",[]],"four"]
+		
+		let expectedArray = ["one", "two", "four"]
+		
+		do {
+			
+			let result = try input.flatten()
+			
+			XCTAssert(result.elementsEqual(expectedArray))
+			
+		} catch {
+			
+			XCTFail("\(error.localizedDescription)")
+		}
+	}
+	
+	func testEmptyStringElement() {
+		
+		let input: [Any] = [["one","two",[""]],"four"]
+		
+		let expectedArray = ["one", "two", "", "four"]
+		
+		do {
+			
+			let result = try input.flatten()
+			
+			XCTAssert(result.elementsEqual(expectedArray))
+			
+		} catch {
+			
+			XCTFail("\(error.localizedDescription)")
+		}
+	}
+	
+	func testEmptyInput() {
+		
+		let input: [Any] = []
+		
+		let expectedArray: [String] = []
+		
+		do {
+			
+			let result = try input.flatten()
+			
+			XCTAssert(result.elementsEqual(expectedArray))
+			
+		} catch {
+			
+			XCTFail("\(error.localizedDescription)")
+		}
+	}
+	
+	func testThrowsOnInvalidInput() {
+		
+		let input: [Any] = [["one","two",[3]],"four"]
+		
+		do {
+			
+			let _ = try input.flatten()
+			
+			XCTFail("This should have failed!")
+			
+		} catch {
+			
+			XCTAssertNoThrow(FlattenError.invalidInput("\(error.localizedDescription)"))
+		}
 	}
 }

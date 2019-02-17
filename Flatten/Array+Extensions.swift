@@ -15,7 +15,7 @@ extension Array {
 		(e.g., [['one','two',['three']],'four'] -> ['one','two','three','four'].	
 	*/
 	
-	func flatten() -> [String] {
+	func flatten() throws -> [String] {
 		
 		var result = [String]()
 		
@@ -25,12 +25,20 @@ extension Array {
 				
 				result.append(str)
 				
+			} else if let array = elt as? [Any] {
+				
+				result += try array.flatten()
+				
 			} else {
 				
-				result += (elt as! [Any]).flatten()
+				throw FlattenError.invalidInput(elt)
 			}
 		}
 		
 		return result
 	}
+}
+
+enum FlattenError: Error {
+	case invalidInput(Any)
 }

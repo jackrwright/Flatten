@@ -21,11 +21,16 @@ class ViewController: UIViewController {
 	
 	@IBAction func solveButtonTapped(_ sender: Any) {
 		
-		result = self.input.flatten()
-		
-		print(result)
-		
-		self.outputTextView.text = "\(result)"
+		do {
+			
+			try result = self.input.flatten()
+			
+			self.outputTextView.text = "\(result)"
+
+		} catch {
+			
+			self.outputTextView.text = "\(error)"
+		}		
 	}
 	
 	let input: [Any] = [["one","two",["three"]],"four"]
